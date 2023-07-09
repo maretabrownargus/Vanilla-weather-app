@@ -1,14 +1,14 @@
 body {
-  background-image: url("src/Clouds..jpg");
+  background-image: url("src/Clouds....jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 h1 {
   color: charcoal;
-  padding: 10px;
+  padding: 0px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 30px;
+  font-size: 27px;
 }
 
 P {
@@ -19,11 +19,11 @@ P {
 
 ul {
   margin: 0;
-  padding: 5px;
+  padding: 0;
 }
 li {
   list-style: none;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 20px;
   text-transform: capitalize;
   margin: 0;
@@ -60,7 +60,6 @@ small {
 }
 
 .weather.temperature.active {
-  color: pink;
   cursor: default;
   text-decoration: none;
 }

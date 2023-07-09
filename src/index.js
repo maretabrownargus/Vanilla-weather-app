@@ -1,6 +1,6 @@
 function formateDate(timestamp) {
   let date = new Date(timestamp);
-  let hours = timestamp.getHours();
+  let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
@@ -25,17 +25,16 @@ function formateDate(timestamp) {
 }
 
 function displayTemperature(response) {
-  console.log(response.data.main.temp);
   let temperatureElement = document.querySelector("#temperature");
 
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
-  let windElement = document.querySelector("speed");
+  let windElement = document.querySelector("wind");
   let dateElement = document.querySelector("date");
   let iconElement = document.querySelector("icon");
 
-  celsiusTemperature = response.data.main.temp;
+  celsiusTemperature = response.data.temperature.current;
 
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.city;
@@ -54,7 +53,7 @@ function displayTemperature(response) {
 
 function search(city) {
   let apiKey = "4t225fc361ea6c07o10c5bb1c313e2bf";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}}&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   console.log(apiUrl);
   axios.get(apiURL).then(displayTemperature);
 }
@@ -82,16 +81,13 @@ function displayCelsiusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-alert(fahrenheitTemperature);
-
 let temperatureElement = document.querySelector("#temperature");
 
 let celsiusTemperature = null;
 
 search("Brisbane");
 
-let form = document.querySelector("search-form");
+let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
