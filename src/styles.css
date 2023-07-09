@@ -1,0 +1,67 @@
+body {
+  background-image: url("src/Clouds..jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  color: charcoal;
+  padding: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 30px;
+}
+
+P {
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5px;
+}
+
+ul {
+  margin: 0;
+  padding: 5px;
+}
+li {
+  list-style: none;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: capitalize;
+}
+
+.weatherapp {
+  max-width: 700px;
+  margin: 35px auto;
+  padding: 25px;
+  border: 1px solid rgb(14, 201, 226);
+  border-radius: 15px;
+  height: 400px;
+  background: linear-gradient(-225deg, #fffeff 0%, #d7fffe 100%);
+}
+strong {
+  font-size: 40px;
+}
+
+small {
+  position: relative;
+  font-size: 25;
+  top: -15px;
+}
+
+.temperature {
+  color: #212121;
+  font-size: 10px;
+  font-weight: 10;
+  line-height: 1;
+  margin-left: 10px;
+  position: fixed;
+}
+
+.weather.temperature.active {
+  color: pink;
+  cursor: default;
+  text-decoration: none;
+}
+
+.weather.temperature.active:hover {
+  text-decoration: none;
+}
