@@ -1,5 +1,5 @@
 body {
-  background-image: url("Vanilla-weather-app/src/Clouds..jpg");
+  background-image: url("src/Clouds..jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -30,15 +30,6 @@ li {
   padding: 0;
 }
 
-.weatherapp {
-  max-width: 650px;
-  margin: 35px auto;
-  padding: 25px;
-  border: 1px solid rgb(14, 201, 226);
-  border-radius: 15px;
-  height: 300px;
-  background: linear-gradient(-225deg, #fffeff 0%, #d7fffe 100%);
-}
 strong {
   font-size: 40px;
 }
@@ -47,6 +38,16 @@ small {
   position: relative;
   font-size: 25;
   top: -15px;
+}
+
+.weatherapp {
+  max-width: 650px;
+  margin: 35px auto;
+  padding: 25px;
+  border: 1px solid rgb(14, 201, 226);
+  border-radius: 15px;
+  height: 300px;
+  background: linear-gradient(-225deg, #fffeff 0%, #d7fffe 100%);
 }
 
 .temperature {

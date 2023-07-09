@@ -16,8 +16,7 @@
       crossorigin="anonymous"
       src="src/index.js"
     ></script>
-    <link rel="stylesheet" href="Vanilla-weather-app/src/styles.css" />
-
+    <link rel="stylesheet" href="src/styles.css"/>
     <title>Weather App</title>
   </head>
   <body>
@@ -28,7 +27,7 @@
               <div class="col-9">
                 <input
                   type="search"
-                  placeholder=" Type a city name.."
+                  placeholder=" Type a city.."
                   class="form-control"
                   id="city-input"
                   autocomplete="off"
@@ -39,21 +38,24 @@
                 type="submit"
                  value="Search" 
                  button type="button" 
-                 class="btn btn-primary w-90"></button>
+                 class="btn btn-primary w-90"/>
               </div>
+               </div>
           </form>
+          <div class="overview"> 
           <h1 id="city"></h1>
           <div class="row">
             <div class="col-6">
               <div class="d-flex weather-temperature">
                 <div class ="float-left">
               <span id="temperature">
-                <strong id="temperature"></strong>
+                <strong id="temperature-value"></strong>
                 <span class = "units">
                 <a href = "#" id="celsius-link" class="active"> °C </a> | 
                 <a href = "#" id="fahrenheit-link" class="active"> °F</a>  
                 </span>
               </span>
+                </div>
                 </div>
               <ul>
                 <li>Last updated <span id="date"></span></li>
@@ -67,18 +69,16 @@
               </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+               </div>
     <p>
       <a
         href="https://github.com/maretabrownargus/Vanilla-weather-app"
         target="blank"
       >
-        Open source code</a
+        Open-source code</a
       >
       by Mareta Brown
     </p>
-    <script src="Vanilla-weather-app/src/index.js"></script>
+    <script src="src/index.js"></script>
   </body>
 </html>

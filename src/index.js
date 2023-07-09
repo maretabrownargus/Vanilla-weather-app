@@ -27,6 +27,7 @@ function formateDate(timestamp) {
 function displayTemperature(response) {
   console.log(response.data.main.temp);
   let temperatureElement = document.querySelector("#temperature");
+
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
@@ -36,22 +37,25 @@ function displayTemperature(response) {
 
   celsiusTemperature = response.data.main.temp;
 
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
-  cityElement.innerHTML = response.data.name;
-  descriptionElement.innerHTML = response.data.weather[0].description;
-  humidityElement.innerHTML = response.data.main.humidity;
-  windElement.innerHTML = response.data.wind;
-  dateElement.innerHTML = formateDate(response.data.dt);
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  cityElement.innerHTML = response.data.city;
+  descriptionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = response.data.temperature.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
+  dateElement.innerHTML = formateDate(response.data.time * 1000);
 
-  iconElement.setAttribute = "src",
-    "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png";
+  iconElement.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+  );
 
-  iconElement.setAttribute ${response.data.condition.icon};
+  iconElement.setAttribute("alt,response.data.condition.icon");
 }
 
 function search(city) {
   let apiKey = "4t225fc361ea6c07o10c5bb1c313e2bf";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units={unit}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}}&key=${apiKey}&units=metric`;
+  console.log(apiUrl);
   axios.get(apiURL).then(displayTemperature);
 }
 
@@ -61,33 +65,29 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-function displayFahrenheitTemperature(event){
-  event.preventDefault(); 
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
 
-celsiusLink.classList.remove("active");
-fahrenheitLink.classList.add("active");
-let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
-
-function displayCelsiusTemperature(event){
+function displayCelsiusTemperature(event) {
   event.preventDefault();
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
-let temperatureElement = document.querySelector("#temperature");
-temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-
 let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-alert (fahrenheitTemperature)
+alert(fahrenheitTemperature);
 
 let temperatureElement = document.querySelector("#temperature");
 
-
 let celsiusTemperature = null;
-
 
 search("Brisbane");
 
