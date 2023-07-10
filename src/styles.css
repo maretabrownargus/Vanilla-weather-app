@@ -1,5 +1,5 @@
 body {
-  background-image: url("src/Clouds....jpg");
+  background-image: url("src/cityview.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -40,6 +40,9 @@ small {
   top: -15px;
 }
 
+.overview {
+  margin-bottom: 20px;
+}
 .weatherapp {
   max-width: 650px;
   margin: 35px auto;
@@ -57,6 +60,10 @@ small {
   line-height: 1;
   margin-left: 10px;
   position: fixed;
+}
+
+.icon {
+  margin-left: 100px;
 }
 
 .weather.temperature.active {

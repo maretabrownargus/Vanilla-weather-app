@@ -39,7 +39,7 @@
                 value="Search"
                 button
                 type="button"
-                class="btn btn-primary w-90"
+                class="btn btn-primary w-100"
               />
             </div>
           </div>
@@ -54,8 +54,15 @@
                     <li>Last updated: <span id="date">Monday 7:45</span></li>
                     <li id="description">Cloudy</li>
                   </ul>
-                  <img src="" alt="" id="icon" class="float-left" />
-                  <span id="temperature">
+                  <img
+                    src="src/broken-clouds-day.png"
+                    width="100"
+                    alt="broken-clouds-day"
+                    id="icon"
+                    class="float-left"
+                  />
+                  
+                  <strong id="temperature">19</strong>
                     <span class="units">
                       <a href="#" id="celsius-link" class="active"> °C </a> |
                       <a href="#" id="fahrenheit-link" class="active"> °F</a>
@@ -66,7 +73,7 @@
             </div>
             <div class="col-6">
               <ul>
-                <li>Humidity: <span id="humidity"></span> 95%</li>
+                <li>Humidity: <span id="humidity"></span> %</li>
                 <li>Wind:<span id="wind"></span> 10 kmp/h</li>
               </ul>
             </div>
