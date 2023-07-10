@@ -30,9 +30,9 @@ function displayTemperature(response) {
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
-  let windElement = document.querySelector("wind");
-  let dateElement = document.querySelector("date");
-  let iconElement = document.querySelector("icon");
+  let windElement = document.querySelector("#wind");
+  let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
 
   celsiusTemperature = response.data.temperature.current;
 
@@ -48,7 +48,7 @@ function displayTemperature(response) {
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
 
-  iconElement.setAttribute("alt,response.data.condition.icon");
+  iconElement.setAttribute("alt", response.data.condition.description);
 }
 
 function search(city) {
@@ -93,5 +93,5 @@ form.addEventListener("submit", handleSubmit);
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
-let celsiusLink = document.querySelector("#celsiusLink");
+let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
