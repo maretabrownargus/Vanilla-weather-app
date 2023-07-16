@@ -33,31 +33,29 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-  let forecast = response.data;
+  let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class= "row">`;
-  days.forEach(function (forecastDay, index) {
+  forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       forecastHTML =
         forecastHTML +
         `
         <div class="col-2">
               <div class ="weather-forecast-date"> 
-             ${forecastDay.dt}
+             ${forecastDay.time}
              </div>
-              <img src=""http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
-                forecastDay.weather[0].icon
-              }" 
+              <img src="${forecastDay.condition.icon_url}" 
               alt="" 
-              width="35">
+              width="50">
           <div class="weather-forecast-temperature"> 
             <span class="weather-forecast-temperature-max">${Math.round(
-              forecastDay.temp.max
+              forecastDay.temperature.maximum
             )}°</span>
              <span class="weather-forecast-temperature-min">${Math.round(
-               forecastDay.temp.min
+               forecastDay.temperature.minimum
              )}°</span>
            </div>
             </div>
@@ -74,7 +72,7 @@ function getForecast(coordinates) {
   let apiKey = "4t225fc361ea6c07o10c5bb1c313e2bf";
   let lat = coordinates.latitude;
   let long = coordinates.longitude;
-  let apiForecastUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${apikey}&units=metric`;
+  let apiForecastUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${long}&lat=${lat}&key=${apiKey}&units=metric`;
   axios.get(apiForecastUrl).then(displayForecast);
 }
 
@@ -103,6 +101,7 @@ function displayTemperature(response) {
   );
 
   iconElement.setAttribute("alt", response.data.condition.description);
+  getForecast(response.data.coordinates);
 }
 
 function search(city) {

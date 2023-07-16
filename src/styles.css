@@ -5,7 +5,7 @@ body {
 }
 
 h1 {
-  color: charcoal;
+  color: navy;
   padding: 0px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 27px;
@@ -28,6 +28,7 @@ li {
   text-transform: capitalize;
   margin: 0;
   padding: 0;
+  color: navy;
 }
 
 strong {
@@ -49,12 +50,12 @@ small {
   padding: 25px;
   border: 1px solid rgb(14, 201, 226);
   border-radius: 15px;
-  height: 400px;
+  height: 450px;
   background: linear-gradient(-225deg, #fffeff 0%, #d7fffe 100%);
 }
 
 .temperature {
-  color: #212121;
+  color: navy;
   font-size: 10px;
   font-weight: 10;
   line-height: 1;
