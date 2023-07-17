@@ -34,7 +34,9 @@ li {
 }
 
 strong {
-  font-size: 38px;
+  font-size: 40px;
+  font-weight: lighter;
+  font-size: ;
 }
 
 small {
@@ -91,6 +93,7 @@ small {
 .weather-forecast-date {
   color: navy;
   font-size: 14px;
+  text-align: center;
 }
 
 .weather-forecast-temperature-min {
