@@ -1,5 +1,5 @@
 body {
-  background-image: url("src/brissy city.jpg");
+  background-image: url("city\ views.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -13,8 +13,10 @@ h1 {
 
 P {
   text-align: center;
-  font-size: 12px;
-  line-height: 1.5px;
+  font-size: 14px;
+  color: rgb(14, 201, 226);
+  line-height: 1px;
+  font-style: bold;
 }
 
 ul {
